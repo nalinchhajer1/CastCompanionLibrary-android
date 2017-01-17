@@ -130,14 +130,15 @@ public class TracksPreferenceManager implements SharedPreferences.OnSharedPrefer
 
     @SuppressLint("NewApi")
     public boolean isCaptionEnabled() {
-        if (Utils.IS_KITKAT_OR_ABOVE) {
-            CaptioningManager captioningManager =
-                    (CaptioningManager) mContext.getSystemService(Context.CAPTIONING_SERVICE);
-            return captioningManager.isEnabled();
-        } else {
-            return mPreferenceAccessor.getBooleanFromPreference(
-                    mContext.getString(R.string.ccl_key_caption_enabled), false);
-        }
+        return true;
+//        if (Utils.IS_KITKAT_OR_ABOVE) {
+//            CaptioningManager captioningManager =
+//                    (CaptioningManager) mContext.getSystemService(Context.CAPTIONING_SERVICE);
+//            return captioningManager.isEnabled();
+//        } else {
+//            return mPreferenceAccessor.getBooleanFromPreference(
+//                    mContext.getString(R.string.ccl_key_caption_enabled), false);
+//        }
     }
 
     public void setFontFamily(String fontFamily) {
